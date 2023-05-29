@@ -1,0 +1,261 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+
+:root{
+    --primary : #ffffff;
+    --secondary : #615e56;
+    --tertiary : #252525;
+
+    --textLight : #ffffff;
+    --textMid : #969696;
+    --textDark : #4b5b61; 
+    
+    --bg : #1f2528;
+}
+
+body {
+    background: var(--bg);
+    font-family: 'Poppins';
+    margin: 0;
+}
+
+h1{
+    margin: 0;
+}
+
+/* Scroll Bar //////////////////////////////////////// */
+::-webkit-scrollbar {
+    width: 16px;
+    background-color: transparent;
+}
+::-webkit-scrollbar-thumb {
+    background: rgb(201, 201, 201);
+    -webkit-box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+/* Hero ////////////////////////////////////////////// */
+.hero{
+    background: url("../images/7.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+}
+
+.hero2{
+    background: url("../images/Wickburner.png");
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+}
+
+.hero-content{
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+}
+
+/* Navigation ////////////////////////////////////////////// */
+header{
+    display: flex;
+    flex-direction: row;
+    background: #1f2528;
+}
+header h1{
+    padding: 0.25em;
+    padding-left: 0.5em;
+    padding-right: 2em;
+    font-size: 2em;
+    color: white;
+}
+.desktop-nav{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-right: auto;
+}
+.desktop-nav a{
+    display: block;
+    text-align: bottom;
+    text-decoration: none;
+    padding: 1em;
+    color: white;
+    font-size: 1.2em;
+}
+.desktop-nav.open-nav{
+    display: none;
+}
+
+.mobile-nav{
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 100%;
+    width: 70%;
+    height: 100vh;
+    display: block;
+    z-index: 99;
+    background: black;
+    padding-top: 2em;
+    transition: 0.3s;
+}
+.mobile-nav.open-nav{
+    left: 30%;
+}
+.mobile-nav a{
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    padding: 0.8em;
+    color: white;
+}
+.mobile-nav a:hover{
+    background: #464646;
+}
+
+.burger{
+    margin-left: auto;
+    margin-right: 1em;
+    margin-top: auto;
+    margin-bottom: auto;
+    display: block;
+    width: 35px;
+    height:35px;
+    cursor:pointer;
+    appearance: none;
+    background: none;
+    outline: none;
+    border: none;
+    z-index: 999;
+}
+.burger .bar, .burger:after, .burger:before{
+    content: '';
+    display: block;
+    width: 100%;
+    height: 5px;
+    background: white;
+    margin: 6px 0px;
+    transition: 0.3s;
+}
+.burger.open-nav:before{
+    transform: rotate(-45deg) translate(-8px, 6px);
+}
+.burger.open-nav:after{
+    transform: rotate(45deg) translate(-9px, -8px);
+}
+.burger.open-nav .bar{
+    opacity: 0;
+}
+
+@media (min-width: 800px){
+    .mobile-nav{
+        display: none;
+    }
+    .burger{
+        display: none;
+    }
+}
+
+@media (max-width: 800px){
+    .desktop-nav{
+        display: none;
+    }
+
+    .hero-content{
+        width: 80%;
+    }
+}
+
+/* Hero Content ////////////////////////////////////////////// */
+.name{
+    text-align: center;
+    margin-top: 4em;
+
+    color: white;
+    font-size: 4em;
+}
+.job-title{
+    text-align: center;
+
+    color: white;
+    font-size: 2em;
+}
+.about{
+    text-align: center;
+    margin-top: 4em;
+
+    color: white;
+    font-size: 1.8em;
+}
+
+/* Links /////////////////////////////////////// */
+.link-container{
+    margin-top: 5em;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 2em
+}
+.linkedin
+{
+    background: url("..//images/logo-linkedin.svg");
+    width : 50px;
+    height: 50px;
+}
+.github
+{
+    background: url("../images/logo-github.svg");
+    width : 50px;
+    height: 50px;
+}
+.fiverr
+{
+    background: url("../images/logo-fiverr.svg");
+    width : 50px;
+    height: 50px;
+}
+
+
+
+
+/* Gallery Page Exclusive ------------------------------------------------------------------------------------------------------------------ */
+.gallery{
+    padding: 1.2em;
+}
+.grid-wrapper > div{ /* Image wrapper */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.grid-wrapper > div > img{ /* Image */
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+    vertical-align: middle;
+    display: inline-block;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+.grid-wrapper{ /* Contains Images */
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-auto-rows: 250px;
+    grid-auto-flow: dense;
+}
+.grid-wrapper .wide{
+    grid-column: span 2;
+}
+.grid-wrapper .tall{
+    grid-row: span 2;
+}
+.grid-wrapper .big{
+    grid-column: span 2;
+    grid-row: span 2;
+}
